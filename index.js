@@ -7,13 +7,14 @@ const mockData = {
   title: "Portfolio-Generator",
   description:
     "Portfolio Generator is a CLI application designed to quickly produce a portfolio HTML file based on CLI input and your github repositories. ",
+  confirmTableOfContents: true,
   installation:
     "This application requires node.js to be installed on your local machine. There are also dependencies which must be installed with 'npm install' command after you have cloned the repo",
   usage:
     "After installing dependencies, you can run 'node app' in the terminal to begin the program. all responses with (required) must have input. Your GitHub username and project titles are case-sensitive. Have an interview next week and no portfolio? Use this application to quickly get a stylish HTML page out there to showcase your hard work, without doing all the hard work!",
   confirmScreenshot: true,
   screenshot: "./assets/photos/screenshot.jpg",
-  creditsConfirm: true,
+  confirmCredits: true,
   credits:
     "This program was written with instructions from the full stack web development boot camp at the Univercity of Texas at Austin",
   license: ["Unlicense"],
@@ -66,6 +67,12 @@ const questions = [
     },
   },
   {
+    type: "confirm",
+    name: "confirmTableOfContents",
+    message: "Would you like to include a table of contents? (recommended)",
+    default: true
+  },
+  {
     type: "input",
     name: "installation",
     message:
@@ -98,7 +105,7 @@ const questions = [
   },
   {
     type: "confirm",
-    name: "creditsConfirm",
+    name: "confirmCredits",
     message:
       "Do you wish to share credit for this project (With collaborators, third party assets, tutorials, etc.)",
     default: false,
@@ -135,9 +142,9 @@ const questions = [
 // function to write README file
 function writeToFile(fileName, data) {
   const pageMD = generateMarkdown(data);
-  fs.writeFile(`./${fileName}.md`, pageMD, (err) => {
+  fs.writeFile(`./dist/${fileName}.md`, pageMD, (err) => {
     if (err) throw err;
-    console.log("Done!");
+    console.log("Done! File is int the dist direcictory.");
   });
 }
 
@@ -146,13 +153,13 @@ function init() {
   return inquirer.prompt(questions);
 }
 
-// function call to initialize program
+// // function call to initialize program
 // init().then((readmeData) => {
 //   const { fileName } = readmeData;
 //   writeToFile(fileName, readmeData);
 // });
 
-// test function call with mock data
+// // test function call with mock data
 
 const test = mockData => {
     const { fileName } = mockData;
