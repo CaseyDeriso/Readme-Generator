@@ -1,9 +1,11 @@
 
-# Portfolio-Generator
+# Readme-Generator
+
+![GitHub issues](https://img.shields.io/github/issues/CaseyDeriso/Readme-Generator) ![GitHub pull requests](https://img.shields.io/github/issues-pr/CaseyDeriso/Readme-Generator) ![license](https://img.shields.io/github/license/CaseyDeriso/Readme-Generator) ![GitHub Repo stars](https://img.shields.io/github/stars/CaseyDeriso/Readme-Generator?style=social) ![GitHub package.json version](https://img.shields.io/github/package-json/v/CaseyDeriso/Readme-Generator)
 
 ## Description
 
-Portfolio Generator is a CLI application designed to quickly produce a portfolio HTML file based on CLI input and your github repositories. 
+generate a professional readme with this CLI application. a readme is a vital part of any professional repository, and readme-generator will make the proccess of creating a readme easy and consistent across your repositories. 
 
 ## Table of Contents:
 * [installation](#installation)
@@ -14,18 +16,18 @@ Portfolio Generator is a CLI application designed to quickly produce a portfolio
 
 ## Installation 
 
-This application requires node.js to be installed on your local machine. There are also dependencies which must be installed with 'npm install' command after you have cloned the repo
+this application requires node.js to be installed on your local machine. after cloning the repository, type the command 'npm install
 
 ## Usage 
 
-After installing dependencies, you can run 'node app' in the terminal to begin the program. all responses with (required) must have input. Your GitHub username and project titles are case-sensitive. Have an interview next week and no portfolio? Use this application to quickly get a stylish HTML page out there to showcase your hard work, without doing all the hard work!
+youtube link. after typing node . in the command line, you will be presented with a list of prompts to tailor your readme to your repository, after you complete the prompts, the readme file will be added to the /dist directory where you can copy the file to your repository. 
 
 ![Screenshot of Application](./assets/photos/screenshot.jpg)
       
 
 ## Credits
 
-This program was written with instructions from the full stack web development boot camp at the Univercity of Texas at Austin
+Univiercity of Texas at Austin full stack web development bootcamp
 
 ## License 
 

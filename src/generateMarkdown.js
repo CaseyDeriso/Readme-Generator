@@ -1,8 +1,30 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
-  const { fileName, github, title, description, ...ToC } = data;
+  const { fileName, github, title, description, badges, ...ToC } = data;
 
-  function generateLinks(data) {}
+  function generateBadges(data, userName, repo) {
+    let badges = []
+    // version       ![GitHub package.json version](https://img.shields.io/github/package-json/v/${userName}/${repo})
+    // issues        ![GitHub issues](https://img.shields.io/github/issues/${userName}/${repo})
+    // pull requests ![GitHub pull requests](https://img.shields.io/github/issues-pr/${userName}/${repo})
+    // license       ![GitHub](https://img.shields.io/github/license/${userName}/${repo})
+    // repo stars    ![GitHub Repo stars](https://img.shields.io/github/stars/${userName}/${repo}?style=social)
+    data.forEach(el => {
+      if (el == 'GitHub issues') {
+        badges.push( `![GitHub issues](https://img.shields.io/github/issues/${userName}/${repo})`)
+      } else if (el == 'Pull requests') {
+        badges.push(`![GitHub pull requests](https://img.shields.io/github/issues-pr/${userName}/${repo})`)
+      } else if (el == 'license') {
+        badges.push(`![license](https://img.shields.io/github/license/${userName}/${repo})`)
+      } else if (el == 'Repo stars') {
+        badges.push(`![GitHub Repo stars](https://img.shields.io/github/stars/${userName}/${repo}?style=social)`)
+      } else if (el == 'version') {
+        badges.push(`![GitHub package.json version](https://img.shields.io/github/package-json/v/${userName}/${repo})`)
+      } 
+    }
+    )
+    return `${badges.join(' ')}`
+  }
 
   function generateTableOfContents(data) {
     if (!data.confirmTableOfContents) {
@@ -43,6 +65,8 @@ ${data.credits}`;
 
   return `
 # ${title}
+
+${generateBadges(badges, github, title)}
 
 ## Description
 

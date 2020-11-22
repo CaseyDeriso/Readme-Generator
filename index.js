@@ -2,22 +2,26 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./src/generateMarkdown");
 const mockData = {
-  fileName: "README",
-  github: "CaseyDeriso",
-  title: "Portfolio-Generator",
-  description:
-    "Portfolio Generator is a CLI application designed to quickly produce a portfolio HTML file based on CLI input and your github repositories. ",
+  fileName: 'README',
+  github: 'CaseyDeriso',
+  title: 'Readme-Generator',
+  description: 'generate a professional readme with this CLI application. a readme is a vital part of any professional repository, and readme-generator will make the proccess of creating a readme easy and consistent across your repositories. ',
   confirmTableOfContents: true,
-  installation:
-    "This application requires node.js to be installed on your local machine. There are also dependencies which must be installed with 'npm install' command after you have cloned the repo",
-  usage:
-    "After installing dependencies, you can run 'node app' in the terminal to begin the program. all responses with (required) must have input. Your GitHub username and project titles are case-sensitive. Have an interview next week and no portfolio? Use this application to quickly get a stylish HTML page out there to showcase your hard work, without doing all the hard work!",
+  installation: "this application requires node.js to be installed on your local machine. after cloning the repository, type the command 'npm install",
+  usage: 'youtube link. after typing node . in the command line, you will be presented with a list of prompts to tailor your readme to your repository, after you complete the prompts, the readme file will be added to the /dist directory where you can copy the file to your repository. ',
   confirmScreenshot: true,
-  screenshot: "./assets/photos/screenshot.jpg",
+  screenshot: './assets/photos/screenshot.jpg',
   confirmCredits: true,
-  credits:
-    "This program was written with instructions from the full stack web development boot camp at the Univercity of Texas at Austin",
-  license: ["Unlicense"],
+  credits: 'Univiercity of Texas at Austin full stack web development bootcamp',
+  license: [ 'Unlicense' ],
+  badgeConfirm: true,
+  badges: [
+    'GitHub issues',
+    'Pull requests',
+    'license',
+    'Repo stars',
+    'version'
+  ]
 };
 
 // array of questions for user
@@ -114,8 +118,8 @@ const questions = [
     type: "input",
     name: "credits",
     message: "please provide information on who you wish to share credit with.",
-    when: ({ creditsConfirm }) => {
-      if (creditsConfirm) {
+    when: ({ confirmCredits }) => {
+      if (confirmCredits) {
         return true;
       } else {
         return false;
@@ -137,6 +141,23 @@ const questions = [
       "Unlicense",
     ],
   },
+  {
+    type: "confirm",
+    name: "badgeConfirm",
+    message: "Would you like to include badges?"
+  },
+  {
+    type: "checkbox",
+    name: "badges",
+    message: "Please select which badges you would like to include:",
+    choices: [
+      "GitHub issues",
+      "Pull requests",
+      "license",
+      "Repo stars",
+      "version"
+    ]
+  }
 ];
 
 // function to write README file
@@ -159,7 +180,7 @@ function init() {
 //   writeToFile(fileName, readmeData);
 // });
 
-// // test function call with mock data
+// test function call with mock data
 
 const test = mockData => {
     const { fileName } = mockData;
