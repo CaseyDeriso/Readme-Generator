@@ -1,28 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./src/generateMarkdown");
-const mockData = {
-  fileName: 'README',
-  github: 'CaseyDeriso',
-  title: 'Readme-Generator',
-  description: 'generate a professional readme with this CLI application. a readme is a vital part of any professional repository, and readme-generator will make the proccess of creating a readme easy and consistent across your repositories. ',
-  confirmTableOfContents: true,
-  installation: "this application requires node.js to be installed on your local machine. after cloning the repository, type the command 'npm install",
-  usage: 'youtube link. after typing node . in the command line, you will be presented with a list of prompts to tailor your readme to your repository, after you complete the prompts, the readme file will be added to the /dist directory where you can copy the file to your repository. ',
-  confirmScreenshot: true,
-  screenshot: './assets/photos/screenshot.jpg',
-  confirmCredits: true,
-  credits: 'Univiercity of Texas at Austin full stack web development bootcamp',
-  license: [ 'Unlicense' ],
-  badgeConfirm: true,
-  badges: [
-    'GitHub issues',
-    'Pull requests',
-    'license',
-    'Repo stars',
-    'version'
-  ]
-};
 
 // array of questions for user
 const questions = [
@@ -74,7 +52,7 @@ const questions = [
     type: "confirm",
     name: "confirmTableOfContents",
     message: "Would you like to include a table of contents? (recommended)",
-    default: true
+    default: true,
   },
   {
     type: "input",
@@ -144,7 +122,7 @@ const questions = [
   {
     type: "confirm",
     name: "badgeConfirm",
-    message: "Would you like to include badges?"
+    message: "Would you like to include badges?",
   },
   {
     type: "checkbox",
@@ -155,9 +133,9 @@ const questions = [
       "Pull requests",
       "license",
       "Repo stars",
-      "version"
-    ]
-  }
+      "version",
+    ],
+  },
 ];
 
 // function to write README file
@@ -165,7 +143,7 @@ function writeToFile(fileName, data) {
   const pageMD = generateMarkdown(data);
   fs.writeFile(`./dist/${fileName}.md`, pageMD, (err) => {
     if (err) throw err;
-    console.log("Done! File is int the dist direcictory.");
+    console.log("Done! File is saved in the dist/ direcictory.");
   });
 }
 
@@ -174,16 +152,8 @@ function init() {
   return inquirer.prompt(questions);
 }
 
-// // function call to initialize program
-// init().then((readmeData) => {
-//   const { fileName } = readmeData;
-//   writeToFile(fileName, readmeData);
-// });
-
-// test function call with mock data
-
-const test = mockData => {
-    const { fileName } = mockData;
-    writeToFile(fileName, mockData)
-}
-test(mockData)
+// function call to initialize program
+init().then((readmeData) => {
+  const { fileName } = readmeData;
+  writeToFile(fileName, readmeData);
+});
