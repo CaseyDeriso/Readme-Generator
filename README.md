@@ -33,3 +33,7 @@ UT Austin full stack web development bootcamp
 ## License 
 
 Unlicense
+
+## Tutorial
+
+[Link to tutorial video](https://www.youtube.com/watch?v=_Mbjo42o7EU&feature=youtu.be)
