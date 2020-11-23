@@ -20,11 +20,7 @@ This project requires node.js to be installed on your local machine. After downl
 
 ## Usage 
 
-This project should be used as a tool to homoginize your readme's across all of your projects. Thanks to the template styling of this project, every readme you generate will share styling and layout, allowing you to spend more time developing, and less time worrying about if your readme is professional. 
-
-## Screenshot
-![Screenshot of Application](./assets/images/screenshot.jpg)
-      
+This project should be used as a tool to homoginize your readme's across all of your projects. Thanks to the template styling of this project, every readme you generate will share styling and layout, allowing you to spend more time developing, and less time worrying about if your readme is professional.    
 
 ## Credits
 
