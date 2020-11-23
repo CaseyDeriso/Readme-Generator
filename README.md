@@ -1,7 +1,7 @@
 
 # Readme-Generator
 
-![GitHub issues](https://img.shields.io/github/issues/CaseyDeriso/Readme-Generator) ![GitHub Repo stars](https://img.shields.io/github/stars/CaseyDeriso/Readme-Generator?style=social) ![GitHub package.json version](https://img.shields.io/github/package-json/v/CaseyDeriso/Readme-Generator) ![license](https://img.shields.io/github/license/${userName}/${repo})
+![GitHub issues](https://img.shields.io/github/issues/CaseyDeriso/Readme-Generator) ![GitHub Repo stars](https://img.shields.io/github/stars/CaseyDeriso/Readme-Generator?style=social) ![GitHub package.json version](https://img.shields.io/github/package-json/v/CaseyDeriso/Readme-Generator) ![license](https://img.shields.io/github/license/CaseyDeriso/Readme-Generator)
 
 ## Description
 
