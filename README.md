@@ -8,10 +8,10 @@
 This project will produce a professional README.md file for the user by taking input from command line prompts. A professional looking readme is the face of any project and deserves to be professional looking and consistent across projects. Readme-Generator seeks to streamline the proccess of creating a readme, which can be tedious. 
 
 ## Table of Contents:
-* [installation](#installation)
-* [usage](#usage)
-* [screenshot](#screenshot)
-* [credits](#credits)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Screenshot](#screenshot)
+* [Credits](#credits)
 
 
 ## Installation 
